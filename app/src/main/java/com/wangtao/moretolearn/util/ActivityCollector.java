@@ -1,4 +1,4 @@
-package com.wangtao.moretolearn;
+package com.wangtao.moretolearn.util;
 
 import android.app.Activity;
 
@@ -38,7 +38,7 @@ public class ActivityCollector {
                 activity.finish();
             }
         }
-        return activities.size() == 0;
+        return activities.isEmpty();
     }
 
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value='more_to_learn'/>
+    <version value='2'/>
+    <list>
+        <mapping class="com.wangtao.moretolearn.db.UserInformation"/>
+    </list>
+</litepal>

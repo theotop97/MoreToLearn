@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".Account.LoginActivity"
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
@@ -23,14 +23,20 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_User"
             android:layout_width="320dp"
             android:layout_height="51dp"
             android:layout_gravity="center"
             android:textCursorDrawable="@drawable/edit_text_cursor"
             android:background="@drawable/edit_text_bg"
             android:gravity="center"
-            android:hint="账号"/>
+            android:hint="账号"
+            android:maxLines="1"
+            android:maxLength="16"
+            android:inputType="textVisiblePassword"
+            android:digits="@string/edit_text_regular"/>
         <EditText
+            android:id="@+id/et_Password"
             android:layout_marginTop="12dp"
             android:layout_width="320dp"
             android:layout_height="51dp"
@@ -38,8 +44,13 @@
             android:textCursorDrawable="@drawable/edit_text_cursor"
             android:background="@drawable/edit_text_bg"
             android:gravity="center"
+            android:digits="@string/edit_text_regular"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:maxLength="16"
             android:hint="密码"/>
         <ImageView
+            android:id="@+id/iv_login"
             android:layout_marginTop="55dp"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -47,6 +58,7 @@
             android:layout_gravity="center"
             android:padding="15dp"
             android:tint="#FFFFFF"
+            android:scaleType="fitXY"
             android:background="@drawable/edit_text_bg"/>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -60,6 +72,7 @@
                 android:text="忘记密码"
                 android:background="@null"/>
             <Button
+                android:id="@+id/bt_userRegistration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="用户注册"
