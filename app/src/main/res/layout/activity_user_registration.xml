@@ -12,69 +12,111 @@
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:fitsSystemWindows="true">
+
         <ImageView
             android:layout_width="200dp"
             android:layout_height="130dp"
-            android:src="@drawable/welcome"
             android:layout_gravity="center"
             android:fitsSystemWindows="true"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/welcome" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center">
-        <EditText
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="320dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:id="@+id/et_newUserNumber"
+                android:layout_width="320dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text_bg"
+                android:digits="@string/edit_text_regular"
+                android:gravity="center"
+                android:hint="账号"
+                android:inputType="textVisiblePassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textCursorDrawable="@drawable/edit_text_cursor" />
+            <ImageView
+                android:id="@+id/iv_UserNumberCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/check_circle"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:tint="#FFFFFF"/>
 
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_gravity="center"
-            android:textCursorDrawable="@drawable/edit_text_cursor"
-            android:background="@drawable/edit_text_bg"
-            android:gravity="center"
-            android:hint="账号"
-            android:maxLines="1"
-            android:maxLength="16"
-            android:inputType="textVisiblePassword"
-            android:digits="@string/edit_text_regular"/>
+        </RelativeLayout>
+
+
+
         <EditText
-            android:layout_marginTop="10dp"
+            android:id="@+id/et_newPassword"
             android:layout_width="320dp"
             android:layout_height="51dp"
             android:layout_gravity="center"
-            android:textCursorDrawable="@drawable/edit_text_cursor"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_bg"
+            android:digits="@string/edit_text_regular"
             android:gravity="center"
             android:hint="密码"
-            android:maxLines="1"
-            android:maxLength="16"
             android:inputType="textPassword"
-            android:digits="@string/edit_text_regular"/>
-        <EditText
-            android:layout_marginTop="10dp"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textCursorDrawable="@drawable/edit_text_cursor" />
+
+        <RelativeLayout
             android:layout_width="320dp"
             android:layout_height="51dp"
             android:layout_gravity="center"
-            android:textCursorDrawable="@drawable/edit_text_cursor"
-            android:background="@drawable/edit_text_bg"
-            android:gravity="center"
-            android:hint="确认密码"
-            android:maxLines="1"
-            android:maxLength="16"
-            android:inputType="textPassword"
-            android:digits="@string/edit_text_regular"/>
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/et_confirmPassword"
+                android:layout_width="320dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text_bg"
+                android:digits="@string/edit_text_regular"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:hint="确认密码"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textCursorDrawable="@drawable/edit_text_cursor" />
+            <ImageView
+                android:id="@+id/iv_PasswordCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/check_circle"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:tint="#FFFFFF"/>
+
+        </RelativeLayout>
+
 
         <ImageView
-            android:layout_marginTop="45dp"
+            android:id="@+id/iv_confirm"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/confirm"
             android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/edit_text_bg"
             android:padding="15dp"
-            android:tint="#FFFFFF"
-            android:background="@drawable/edit_text_bg"/>
+            android:src="@drawable/confirm"
+            android:tint="#FFFFFF" />
     </LinearLayout>
 
 </LinearLayout>
