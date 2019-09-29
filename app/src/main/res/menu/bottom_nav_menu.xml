@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/botnav_homepage"
+        android:title="首页"
+        android:icon="@drawable/home_smile_line" />
+    <item
+        android:id="@+id/botnav_find"
+        android:title="发现"
+        android:icon="@drawable/earth" />
+    <item
+        android:id="@+id/botnav_team"
+        android:title="朋友"
+        android:icon="@drawable/team" />
+
+</menu>

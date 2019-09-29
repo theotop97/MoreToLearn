@@ -38,6 +38,7 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollector.addActivity(this);
         //隐藏顶部状态栏，必须写在setContentView方法前
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_user_registration);
@@ -48,6 +49,12 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
         }
         initUI();
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
     }
 
     @Override
@@ -233,6 +240,7 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
                 information.save();
                 LoginActivity.actionStart(this);
                 ActivityCollector.removeActivity(this);
+                finish();
                 Toast.makeText(this,"注册成功，现在可以登录啦!",Toast.LENGTH_SHORT).show();
                 break;
             default:

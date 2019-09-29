@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/search"
+            android:title="搜索" />
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/favorite"
+            android:title="收藏" />
+        <item
+            android:id="@+id/nav_information"
+            android:icon="@drawable/information"
+            android:title="信息" />
+        <item
+            android:id="@+id/nav_service"
+            android:icon="@drawable/service"
+            android:title="客服" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/account"
+            android:title="账户" />
+        <item
+            android:id="@+id/nav_set"
+            android:icon="@drawable/set"
+            android:title="设置" />
+    </group>
+
+</menu>

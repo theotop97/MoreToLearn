@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Account.LoginActivity"
     android:orientation="vertical"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    >
 
     <ImageView
         android:layout_width="200dp"

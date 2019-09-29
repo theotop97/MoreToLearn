@@ -17,8 +17,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.wangtao.moretolearn.Function.FunctionMainActivity;
 import com.wangtao.moretolearn.R;
 import com.wangtao.moretolearn.db.UserInformation;
+import com.wangtao.moretolearn.util.ActivityCollector;
 import com.wangtao.moretolearn.util.BaseActivity;
 
 import org.litepal.crud.DataSupport;
@@ -46,6 +48,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollector.addActivity(this);
         //隐藏顶部状态栏，必须写在setContentView方法前
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
@@ -57,13 +60,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         initUI();
         if (sharedPreferences.getBoolean("isLogin", false)) {
             //在这里直接进入主Activity
-            Toast.makeText(this,"123",Toast.LENGTH_SHORT).show();
+            FunctionMainActivity.actionStart(this);
+            ActivityCollector.removeActivity(this);
+            finish();
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
+
+
     /*
-    当点击EditText以外的区域关闭输入法
-     */
+        当点击EditText以外的区域关闭输入法
+         */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
@@ -197,7 +209,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         editor.putString("password", userInformation.getPassword());
                         editor.apply();
 
-                        Toast.makeText(this, "！", Toast.LENGTH_SHORT).show();
+                        FunctionMainActivity.actionStart(this);
+                        ActivityCollector.removeActivity(this);
+                        finish();
+
                     } else {
 
                         Toast.makeText(this, "账号不存在或密码输入错误!", Toast.LENGTH_SHORT).show();

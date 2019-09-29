@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="edit_text_cursor_color">#22A7FF</color>
+    <color name="my_colorPrimary">#FFFFFF</color>
+    <color name="colorNotChecked">#8A8A8A</color>
+    <color name="colorDark">#000000</color>
+
 </resources>
