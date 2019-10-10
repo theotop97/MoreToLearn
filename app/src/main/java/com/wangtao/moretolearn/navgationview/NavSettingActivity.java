@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.wangtao.moretolearn.Account.LoginActivity;
-import com.wangtao.moretolearn.R;
+import com.wangtao.moretolearn.R;                           
 import com.wangtao.moretolearn.util.ActivityCollector;
 import com.wangtao.moretolearn.util.BaseActivity;
 

@@ -8,6 +8,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -76,6 +77,11 @@ public class FunctionMainActivity extends BaseActivity implements NavigationView
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         drawerLayout = findViewById(R.id.dl_DrawerLayout);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.menu);
+        }
         navigationView = findViewById(R.id.nv_NavigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -88,9 +94,17 @@ public class FunctionMainActivity extends BaseActivity implements NavigationView
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.more_function) {
-            Toast.makeText(this, "111111", Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.more_function:
+                Toast.makeText(this, "111111", Toast.LENGTH_SHORT).show();
+                break;
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                break;
+            default:
+                break;
         }
+
         return true;
     }
 
