@@ -75,8 +75,9 @@ public class NavSettingActivity extends BaseActivity implements View.OnClickList
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putBoolean("isLogin",false);
                         editor.apply();
-                        ActivityCollector.finishAll();
-                        LoginActivity.actionStart(NavSettingActivity.this);
+                        sendBroadcast(new Intent("com.moretolearn.navigationview.FORCE_OFFLINE"));
+//                        ActivityCollector.finishAll();
+//                        LoginActivity.actionStart(NavSettingActivity.this);
                         dialog.dismiss();
                     }
                 });

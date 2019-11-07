@@ -143,6 +143,12 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
                     et_newPassword.setText("");
 
                 }
+                //完善了注册时可以使用同一个账号注册情况
+                if (isUserNumberCorrect(et_newUserNumber.getText().toString())) {
+                    et_newPassword.setEnabled(true);
+                } else {
+                    et_newPassword.setEnabled(false);
+                }
 
 
             }
@@ -151,6 +157,7 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
         et_newPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
 
             }
 
@@ -184,15 +191,22 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                if (isUserNumberCorrect(et_newUserNumber.getText().toString())) {
+                    iv_UserNumberCorrect.setColorFilter(Color.parseColor("#5ECF41"));
+                } else {
+                    iv_Confirm.setEnabled(false);
+                    iv_Confirm.setColorFilter(Color.parseColor("#FFFFFF"));
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+
                 if (s.toString().equals(et_newPassword.getText().toString()) && !et_ConfirmPassword.getText().toString().equals("")) {
                     iv_Confirm.setEnabled(true);
                     iv_PasswordCorrect.setEnabled(true);
@@ -204,6 +218,7 @@ public class UserRegistrationActivity extends BaseActivity implements View.OnCli
                     iv_Confirm.setColorFilter(Color.parseColor("#FFFFFF"));
                     iv_PasswordCorrect.setColorFilter(Color.parseColor("#FFFFFF"));
                 }
+
 
             }
         });
